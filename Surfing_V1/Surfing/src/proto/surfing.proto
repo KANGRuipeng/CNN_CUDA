@@ -1,0 +1,242 @@
+syntax  = "proto2";
+
+package surfing;
+
+message BlobProto
+{
+	optional int32 num = 1 [default = 0];
+	optional int32 channels = 2 [default = 0];
+	optional int32 height = 3 [default = 0];
+	optional int32 width = 4 [default = 0];
+
+	repeated float data = 5 [packed = true];
+	repeated float diff = 6 [packed = true];
+	
+	repeated double double_data = 7 [packed = true];
+	repeated double double_diff = 8 [packed = true];
+}
+
+message Datum 
+{
+	optional int32 channels = 1;
+	optional int32 height = 2;
+	optional int32 width = 3;
+	optional bytes data = 4;
+	optional int32 label = 5;
+
+	repeated float float_data = 6;	
+}
+
+message FilterParameter
+{
+	enum FilterType
+	{
+		GAUSSIAN = 0;
+		UNIFORM = 1;
+	}
+	optional FilterType filter = 1 [default = GAUSSIAN];
+
+	optional float mean = 2 [default = 0];
+	optional float std = 3 [default = 0.1];
+
+	optional float range = 4 [default = 0.1];
+
+	optional float bias = 6 [default = 0];
+
+	optional int32 num = 7 [default = 0];
+	optional int32 channels = 8 [default = 0];
+	optional int32 height = 9 [default = 0];
+	optional int32 width = 10 [default = 0];
+}
+
+message SolverParameter
+{
+	enum IS_PRE_TRAIN
+	{
+		PRE_TRAIN = 0;
+		NEW  = 1;
+	}
+	optional IS_PRE_TRAIN  is_pre_train = 1 [default = NEW];
+	optional string net = 2;
+	optional string net_binary = 3;
+
+	optional int32 max_iter = 4;
+	optional float global_learning_rate = 5;
+	optional float momentum = 6;
+	optional float weight_decay = 7;
+	optional int32 test_epoch = 8;
+	optional int32 display_epoch = 9 [default = 100];
+} 
+
+message NetParameter
+{
+	optional string name = 1;
+	repeated LayerParameter layer = 100;
+}
+
+message LayerParameter
+{
+	optional string name = 1;
+	enum Type
+	{	
+		BATCHNORMALIZATION = 13;	
+		CONCATENATE = 12;
+		CONVOLUTION = 0;			
+		DATA = 1;
+		DROPOUT = 2;	
+		INNERPRODUCT = 3;
+		LCN = 4;
+		LRN = 5;
+		POOLING = 6;
+		RELU = 7;
+		RESULT = 8;
+		SIGMOID = 9;
+		SOFTMAX = 10;
+		TANH = 11;
+	}
+	optional Type type = 2;
+
+	repeated string bottom = 3;
+	optional string top = 4;
+
+	//Used to define the shape of top blobs, also used to init those blobs.
+	optional int32 num = 11 [default = 0];
+	optional int32 channels = 12 [default = 0];
+	optional int32 height = 13 [default = 0];
+	optional int32 width = 14 [default = 0];
+
+	enum Phase 
+	{
+		TRAIN = 0;
+		TEST = 1;
+		ALL = 2;	
+	}
+	optional Phase phase = 5 [default = ALL];
+
+	optional BlobProto param = 6;
+	optional BlobProto bias = 7;
+
+	optional float filter_learning_rate = 8;
+	optional float bias_learning_rate = 9;
+
+	optional BatchNormalizationParameter batch_normalization_param = 99;
+	optional ConcatenateParameter concat_param = 100;
+	optional ConvolutionParameter conv_param = 101; 
+	optional DataParameter  data_param = 102;
+	optional DropoutParameter dropout_param = 103;
+	optional InnerProductParameter inner_product_param = 104;
+	optional LCNParameter lcn_param = 105;
+	optional LRNParameter lrn_param = 106;
+	optional PoolingParameter pooling_param = 107;
+	optional ReluParameter relu_param = 108;
+	optional ResultParameter result_param = 109;
+	optional SigmoidParameter sigmoid_param = 110;
+	optional SoftmaxParameter softmax_param = 111;
+	optional TanhParameter tanh_param = 112;
+}
+
+message BatchNormalizationParameter
+{
+	enum Type
+	{
+		CONV = 0;
+		IP = 1;
+	}
+	optional Type type = 1 [default = CONV];
+}
+
+message ConcatenateParameter
+{
+
+}
+message ConvolutionParameter
+{
+	optional uint32 num_output = 1;
+	optional uint32 kernel_size = 2;
+	optional uint32 pad_h = 3 [default = 0];
+	optional uint32 pad_w = 4 [default = 0];
+	optional uint32 stride_h = 5 [default = 1];
+	optional uint32 stride_w = 6 [default = 1];
+
+	optional FilterParameter filter_parameter= 7;
+}
+
+message DataParameter
+{
+	optional string source = 1;
+	optional uint32 batch_size = 2;
+	optional uint32 num = 3;
+	optional string mean_file = 4;
+	repeated uint32 cropped_size = 5;
+}
+
+message DropoutParameter
+{
+	optional float dropout_ratio = 1 [default = 0.5];
+}
+
+message InnerProductParameter
+{
+	optional uint32 num_output = 1;
+
+	optional FilterParameter filter_parameter= 2;
+}
+
+message LCNParameter
+{
+	
+}
+
+message LRNParameter
+{
+	optional uint32 local_size = 1 [default = 5];
+	optional float alpha = 2 [default = 1e-4];
+	optional float beta = 3 [default = 0.75];
+	optional float k = 4 [default = 1.0];
+}
+
+message PoolingParameter
+{
+	enum PoolingMethod
+	{
+		MAX = 0;
+		AVE = 1;
+	}
+	optional PoolingMethod pooling_method = 1 [default = MAX];
+	optional uint32 pad_h = 2 [default = 0];
+	optional uint32 pad_w = 3 [default = 0];
+	optional uint32 stride_h = 4 [default = 2];
+	optional uint32 stride_w = 5 [default = 2];
+	optional uint32 window_h = 6 [default = 2];
+	optional uint32 window_w = 7 [default = 2];
+}
+
+message ReluParameter
+{
+	
+}
+
+message ResultParameter
+{
+	enum LossType
+	{
+		L1 = 0;
+		L2 = 1;
+	}
+	optional LossType losstype = 1 [default = L1];
+}
+
+message SigmoidParameter
+{
+	
+}
+
+message SoftmaxParameter
+{
+
+}
+
+message TanhParameter
+{
+
+}

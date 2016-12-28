@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{b3abe526-9fc9-402f-ba1b-2f08ae785544}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{73a60997-1a37-4886-a053-19179e55b939}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\basic">
+      <UniqueIdentifier>{94400a56-20b4-4795-8091-548ee5e7d473}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\layer">
+      <UniqueIdentifier>{508e3fac-1797-498e-9b37-ba87798615b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\basic">
+      <UniqueIdentifier>{f3d6cccf-884a-47a1-be7a-db6da671e7d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\layer">
+      <UniqueIdentifier>{053f67a6-6c11-45d7-a3e7-307b9fcac03c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\proto">
+      <UniqueIdentifier>{65cbe6b1-5a0d-4761-8c56-9f9e8904529e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\proto">
+      <UniqueIdentifier>{5b8e0755-1832-4833-90b6-705f79234011}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\test">
+      <UniqueIdentifier>{c771e283-9012-4a9b-a61d-2d8e87301cd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\test">
+      <UniqueIdentifier>{f8c041ba-7a79-4ec6-beda-66587df2cbb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\data">
+      <UniqueIdentifier>{947a41b9-890c-479d-af02-ad46f7658f25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\data">
+      <UniqueIdentifier>{99a7d8fd-40c9-4288-b74c-f7674d09a4c9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="..\src\proto\surfing.proto">
+      <Filter>src\proto</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\proto\surfing.pb.h">
+      <Filter>include\proto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\basic\blob.h">
+      <Filter>include\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\basic\common.h">
+      <Filter>include\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\basic\cudnn_api.h">
+      <Filter>include\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\basic\dblmdb.h">
+      <Filter>include\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\basic\io_parameter.h">
+      <Filter>include\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\basic\math_function.h">
+      <Filter>include\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\basic\random_variable.h">
+      <Filter>include\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\basic\syncedmemory.h">
+      <Filter>include\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\test\rng_test.h">
+      <Filter>include\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\layer\convolution_layer.h">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\layer\data_layer.h">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\layer\dropout_layer.h">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\layer\inner_product_layer.h">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\layer\layer.h">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\layer\lrn_layer.h">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\layer\pooling_layer.h">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\layer\relu_layer.h">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\layer\result_layer.h">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\layer\sigmoid_layer.h">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\layer\softmax_layer.h">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\layer\tanh_layer.h">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\data\display.h">
+      <Filter>include\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\data\xml_parse.h">
+      <Filter>include\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\data\image_crop.h">
+      <Filter>include\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\data\image_mean.h">
+      <Filter>include\data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\net.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\solver.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\layer\concatenate_layer.h">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\test\softmax_test.h">
+      <Filter>include\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\test\sigmoid_test.h">
+      <Filter>include\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\test\pooling_test.h">
+      <Filter>include\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\layer\batch_normalization_layer.h">
+      <Filter>include\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\test\batch_normalization_test.h">
+      <Filter>include\test</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\proto\surfing.pb.cc">
+      <Filter>src\proto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\basic\blob.cpp">
+      <Filter>src\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\basic\common.cpp">
+      <Filter>src\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\basic\cudnn_api.cpp">
+      <Filter>src\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\basic\dblmdb.cpp">
+      <Filter>src\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\basic\io_parameter.cpp">
+      <Filter>src\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\basic\math_function.cpp">
+      <Filter>src\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\basic\random_variable.cpp">
+      <Filter>src\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\basic\syncedmemory.cpp">
+      <Filter>src\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\test\rng_test.cpp">
+      <Filter>src\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\layer\convolution_layer.cpp">
+      <Filter>src\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\layer\data_layer.cpp">
+      <Filter>src\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\layer\dropout_layer.cpp">
+      <Filter>src\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\layer\inner_product_layer.cpp">
+      <Filter>src\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\layer\layer.cpp">
+      <Filter>src\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\layer\lrn_layer.cpp">
+      <Filter>src\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\layer\pooling_layer.cpp">
+      <Filter>src\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\layer\relu_layer.cpp">
+      <Filter>src\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\layer\result_layer.cpp">
+      <Filter>src\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\layer\sigmoid_layer.cpp">
+      <Filter>src\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\layer\softmax_layer.cpp">
+      <Filter>src\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\layer\tanh_layer.cpp">
+      <Filter>src\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\data\display.cpp">
+      <Filter>src\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\data\xml_parse.cpp">
+      <Filter>src\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\data\image_crop.cpp">
+      <Filter>src\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\data\image_mean.cpp">
+      <Filter>src\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\solver.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\net.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\layer\concatenate_layer.cpp">
+      <Filter>src\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\test\softmax_test.cpp">
+      <Filter>src\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\test\sigmoid_test.cpp">
+      <Filter>src\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\test\pooling_test.cpp">
+      <Filter>src\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\layer\batch_normalization_layer.cpp">
+      <Filter>src\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\test\batch_normalization_test.cpp">
+      <Filter>src\test</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\src\basic\math_function.cu">
+      <Filter>src\basic</Filter>
+    </CudaCompile>
+  </ItemGroup>
+</Project>

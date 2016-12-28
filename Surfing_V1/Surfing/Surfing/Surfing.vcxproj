@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\protoc_x64.2.6.1\build\native\protoc_x64.props" Condition="Exists('..\packages\protoc_x64.2.6.1\build\native\protoc_x64.props')" />
+  <Import Project="..\packages\OpenCV.2.4.10\build\native\OpenCV.props" Condition="Exists('..\packages\OpenCV.2.4.10\build\native\OpenCV.props')" />
+  <Import Project="..\packages\gflags.2.1.2.1\build\native\gflags.props" Condition="Exists('..\packages\gflags.2.1.2.1\build\native\gflags.props')" />
+  <Import Project="..\packages\glog.0.3.3.0\build\native\glog.props" Condition="Exists('..\packages\glog.0.3.3.0\build\native\glog.props')" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\proto\surfing.proto" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\basic\blob.h" />
+    <ClInclude Include="..\include\basic\common.h" />
+    <ClInclude Include="..\include\basic\cudnn_api.h" />
+    <ClInclude Include="..\include\basic\dblmdb.h" />
+    <ClInclude Include="..\include\basic\io_parameter.h" />
+    <ClInclude Include="..\include\basic\math_function.h" />
+    <ClInclude Include="..\include\basic\random_variable.h" />
+    <ClInclude Include="..\include\basic\syncedmemory.h" />
+    <ClInclude Include="..\include\data\display.h" />
+    <ClInclude Include="..\include\data\image_crop.h" />
+    <ClInclude Include="..\include\data\image_mean.h" />
+    <ClInclude Include="..\include\data\xml_parse.h" />
+    <ClInclude Include="..\include\layer\batch_normalization_layer.h" />
+    <ClInclude Include="..\include\layer\concatenate_layer.h" />
+    <ClInclude Include="..\include\layer\convolution_layer.h" />
+    <ClInclude Include="..\include\layer\data_layer.h" />
+    <ClInclude Include="..\include\layer\dropout_layer.h" />
+    <ClInclude Include="..\include\layer\inner_product_layer.h" />
+    <ClInclude Include="..\include\layer\layer.h" />
+    <ClInclude Include="..\include\layer\lrn_layer.h" />
+    <ClInclude Include="..\include\layer\pooling_layer.h" />
+    <ClInclude Include="..\include\layer\relu_layer.h" />
+    <ClInclude Include="..\include\layer\result_layer.h" />
+    <ClInclude Include="..\include\layer\sigmoid_layer.h" />
+    <ClInclude Include="..\include\layer\softmax_layer.h" />
+    <ClInclude Include="..\include\layer\tanh_layer.h" />
+    <ClInclude Include="..\include\net.h" />
+    <ClInclude Include="..\include\proto\surfing.pb.h" />
+    <ClInclude Include="..\include\solver.h" />
+    <ClInclude Include="..\include\test\batch_normalization_test.h" />
+    <ClInclude Include="..\include\test\pooling_test.h" />
+    <ClInclude Include="..\include\test\rng_test.h" />
+    <ClInclude Include="..\include\test\sigmoid_test.h" />
+    <ClInclude Include="..\include\test\softmax_test.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\basic\blob.cpp" />
+    <ClCompile Include="..\src\basic\common.cpp" />
+    <ClCompile Include="..\src\basic\cudnn_api.cpp" />
+    <ClCompile Include="..\src\basic\dblmdb.cpp" />
+    <ClCompile Include="..\src\basic\io_parameter.cpp" />
+    <ClCompile Include="..\src\basic\math_function.cpp" />
+    <ClCompile Include="..\src\basic\random_variable.cpp" />
+    <ClCompile Include="..\src\basic\syncedmemory.cpp" />
+    <ClCompile Include="..\src\data\display.cpp" />
+    <ClCompile Include="..\src\data\image_crop.cpp" />
+    <ClCompile Include="..\src\data\image_mean.cpp" />
+    <ClCompile Include="..\src\data\xml_parse.cpp" />
+    <ClCompile Include="..\src\layer\batch_normalization_layer.cpp" />
+    <ClCompile Include="..\src\layer\concatenate_layer.cpp" />
+    <ClCompile Include="..\src\layer\convolution_layer.cpp" />
+    <ClCompile Include="..\src\layer\data_layer.cpp" />
+    <ClCompile Include="..\src\layer\dropout_layer.cpp" />
+    <ClCompile Include="..\src\layer\inner_product_layer.cpp" />
+    <ClCompile Include="..\src\layer\layer.cpp" />
+    <ClCompile Include="..\src\layer\lrn_layer.cpp" />
+    <ClCompile Include="..\src\layer\pooling_layer.cpp" />
+    <ClCompile Include="..\src\layer\relu_layer.cpp" />
+    <ClCompile Include="..\src\layer\result_layer.cpp" />
+    <ClCompile Include="..\src\layer\sigmoid_layer.cpp" />
+    <ClCompile Include="..\src\layer\softmax_layer.cpp" />
+    <ClCompile Include="..\src\layer\tanh_layer.cpp" />
+    <ClCompile Include="..\src\net.cpp" />
+    <ClCompile Include="..\src\proto\surfing.pb.cc" />
+    <ClCompile Include="..\src\solver.cpp" />
+    <ClCompile Include="..\src\test\batch_normalization_test.cpp" />
+    <ClCompile Include="..\src\test\pooling_test.cpp" />
+    <ClCompile Include="..\src\test\rng_test.cpp" />
+    <ClCompile Include="..\src\test\sigmoid_test.cpp" />
+    <ClCompile Include="..\src\test\softmax_test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\src\basic\math_function.cu" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A0A57EC7-2D3F-494D-B427-DC8C744EEDE5}</ProjectGuid>
+    <RootNamespace>Surfing</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 8.0.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <NuGetPackageImportStamp>3f5f39d6</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)/include;$(SolutionDir)/include/proto;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(SolutionDir)/include;$(SolutionDir)/include/proto;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;WIN64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_61,sm_61</CodeGeneration>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;WIN64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_61,sm_61;%(CodeGeneration)</CodeGeneration>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 8.0.targets" />
+    <Import Project="..\packages\glog.0.3.3.0\build\native\glog.targets" Condition="Exists('..\packages\glog.0.3.3.0\build\native\glog.targets')" />
+    <Import Project="..\packages\gflags.2.1.2.1\build\native\gflags.targets" Condition="Exists('..\packages\gflags.2.1.2.1\build\native\gflags.targets')" />
+    <Import Project="..\packages\lmdb-v120-clean.0.9.14.0\build\native\lmdb-v120-clean.targets" Condition="Exists('..\packages\lmdb-v120-clean.0.9.14.0\build\native\lmdb-v120-clean.targets')" />
+    <Import Project="..\packages\OpenCV.2.4.10\build\native\OpenCV.targets" Condition="Exists('..\packages\OpenCV.2.4.10\build\native\OpenCV.targets')" />
+    <Import Project="..\packages\protobuf-v120.2.6.1\build\native\protobuf-v120.targets" Condition="Exists('..\packages\protobuf-v120.2.6.1\build\native\protobuf-v120.targets')" />
+    <Import Project="..\packages\tinyxml2.redist.3.0.0\build\native\tinyxml2.redist.targets" Condition="Exists('..\packages\tinyxml2.redist.3.0.0\build\native\tinyxml2.redist.targets')" />
+    <Import Project="..\packages\tinyxml2.3.0.0\build\native\tinyxml2.targets" Condition="Exists('..\packages\tinyxml2.3.0.0\build\native\tinyxml2.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\glog.0.3.3.0\build\native\glog.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\glog.0.3.3.0\build\native\glog.props'))" />
+    <Error Condition="!Exists('..\packages\glog.0.3.3.0\build\native\glog.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\glog.0.3.3.0\build\native\glog.targets'))" />
+    <Error Condition="!Exists('..\packages\gflags.2.1.2.1\build\native\gflags.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\gflags.2.1.2.1\build\native\gflags.props'))" />
+    <Error Condition="!Exists('..\packages\gflags.2.1.2.1\build\native\gflags.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\gflags.2.1.2.1\build\native\gflags.targets'))" />
+    <Error Condition="!Exists('..\packages\lmdb-v120-clean.0.9.14.0\build\native\lmdb-v120-clean.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\lmdb-v120-clean.0.9.14.0\build\native\lmdb-v120-clean.targets'))" />
+    <Error Condition="!Exists('..\packages\OpenCV.2.4.10\build\native\OpenCV.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenCV.2.4.10\build\native\OpenCV.props'))" />
+    <Error Condition="!Exists('..\packages\OpenCV.2.4.10\build\native\OpenCV.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenCV.2.4.10\build\native\OpenCV.targets'))" />
+    <Error Condition="!Exists('..\packages\protobuf-v120.2.6.1\build\native\protobuf-v120.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\protobuf-v120.2.6.1\build\native\protobuf-v120.targets'))" />
+    <Error Condition="!Exists('..\packages\protoc_x64.2.6.1\build\native\protoc_x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\protoc_x64.2.6.1\build\native\protoc_x64.props'))" />
+    <Error Condition="!Exists('..\packages\tinyxml2.redist.3.0.0\build\native\tinyxml2.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\tinyxml2.redist.3.0.0\build\native\tinyxml2.redist.targets'))" />
+    <Error Condition="!Exists('..\packages\tinyxml2.3.0.0\build\native\tinyxml2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\tinyxml2.3.0.0\build\native\tinyxml2.targets'))" />
+  </Target>
+</Project>
