@@ -12,3 +12,10 @@ I push my code to git just preventing loss of my code. This is not the final ver
 (7) git remote add origin https://github.com/KANGRuipeng/CNN_CUDA.git
 (8) git push -u origin master
 
+
+
+(1)Install win10;
+(2)Update to newest Version;;
+(3)Install VS2013;
+(4)Install CUDA8.0;
+(5)Add CUDNN to Path;
